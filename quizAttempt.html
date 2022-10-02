@@ -40,7 +40,7 @@ body{
 #questions_panel{
 	!display: none;
 	grid-template-columns: auto auto auto;
-	column-gap:15%;
+	column-gap:10%;
 	row-gap:0.5%;
 	//background-color:white;
 	//align-content:center;
@@ -48,19 +48,24 @@ body{
 	z-index: 3;
 	//border-bottom:2px solid black;
 	//margin-bottom:20px;
+	padding:5px;
 }
 .qn_button{
 background-color:#f1f1f1;
 //flex: 0 1 21%;
 	border : 2px solid black;
-	padding:5px;
+	padding:15px;
 	margin:2px;
-	border-radius:5px 0px 0px 0px;
+	border-radius:10px 0px 0px 0px;
 	text-align:center;
 	height:85%;
 	width:85%;
+	cursor:pointer;
 }
+.qn_button:hover{
+	
 
+}
 #navbar{
 	display: flex;
 	flex-direction:row-reverse;
@@ -177,7 +182,7 @@ background-color:#f1f1f1;
 		<br><br>
 		<div style="background-color:cyan;border:1px solid black;text-align:center">Questions Palette</div>
 		<div id="questions_panel">
-			<button class="qn_button" onclick="hideRightPanel();" style="grid-column:3 ;background-color:red;color:white;" > X </button>
+			
 			<button class="qn_button" > 1 </button>
 			<button class="qn_button">2</button>
 			<button class="qn_button">3</button>
@@ -198,4 +203,5 @@ background-color:#f1f1f1;
 <!-- </div> -->
 </body>
 </html>
+
 
