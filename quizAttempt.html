@@ -47,13 +47,13 @@ body{
 	//height:30%;
 	z-index: 3;
 	//border-bottom:2px solid black;
-	//margin-bottom:20px;
+	margin-top:8px;
 	padding:5px;
 }
 .qn_button{
 background-color:#f1f1f1;
 //flex: 0 1 21%;
-	border : 2px solid black;
+	border : 1px solid grey;
 	padding:15px;
 	margin:2px;
 	border-radius:10px 0px 0px 0px;
@@ -61,10 +61,13 @@ background-color:#f1f1f1;
 	height:85%;
 	width:85%;
 	cursor:pointer;
+	box-shadow : 5px 5px 5px lightgrey;
 }
 .qn_button:hover{
-	
-
+//transition-duration:0.05s;
+	font-size:18px;
+	//background-color:#f1f1e7;
+	box-shadow : 7px 7px 5px lightgrey;
 }
 #navbar{
 	display: flex;
@@ -80,7 +83,14 @@ background-color:#f1f1f1;
 .navbar_items{
 	margin:10px;
 	border-radius:25px;
+	border: 1px solid #3333cc;
+	color:#3333cc;
 	cursor:pointer;
+}
+.navbar_items:hover{
+	background-color: #3333cc;
+	font-size:16px;
+	color:white;
 }
 #app_header{
 	background-color:#d6d6f5;
@@ -204,5 +214,3 @@ background-color:#f1f1f1;
 <!-- </div> -->
 </body>
 </html>
-
-
