@@ -74,8 +74,9 @@ background-color:#f1f1f1;
 	flex-direction:row-reverse;
 	//position: sticky;
     background-color: #d6d6ef;
-	border:1px solid black;
-    
+	border-bottom:1px solid black;
+    background-color:#dccae0;
+	//border-top:0px;
     //top: 0;
     height: clamp(55px, 10vh, 55px);
     
@@ -103,19 +104,20 @@ background-color:#f1f1f1;
 	padding-top:15px;
 	//padding-bottom:20px;
 	font-family:sans-serif;
-	border-bottom: 1px solid black;
+	//border-bottom: 1px solid black;
 }
 #details{
-	background-color:white;
+	background: rgba(175, 50, 80, 0.2);
 	color:black;
 	height: clamp(35px, 8vh, 35px);
 	font-size:17px;
 	padding-top:15px;
-	margin:5px;
+	padding-left:3%;
+	margin:0px;
 	font-family:sans-serif;
 }
 #question_area{
-	background-color:#ffffed;
+	//background-color:#ffffed;
 	height:75%;
 	width:100%;
 	float:left;
@@ -125,7 +127,7 @@ background-color:#f1f1f1;
 }
 #question_type_area{
 	padding:10px;
-	border-bottom: 2px solid black;
+	border-bottom: 1px solid black;
 }
 #question_description{
 	padding:20px;
@@ -186,12 +188,12 @@ background-color:#f1f1f1;
 	
 	<div id="right_panel">
 		<div id = "time_panel">
-			<div style="background-color:cyan;border-bottom:1px solid black;">Time left</div>
+			<div style="background-color:c6e2ff;border-bottom:1px solid black;">Time left</div>
 			
 			00:00:00
 		</div>
 		<br><br>
-		<div style="background-color:cyan;border:1px solid black;text-align:center">Questions Palette</div>
+		<div style="background-color:#c6e2ff;border:1px solid black;text-align:center">Questions Palette</div>
 		<div id="questions_panel">
 			
 			<button class="qn_button" > 1 </button>
