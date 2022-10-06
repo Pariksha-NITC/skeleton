@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<head>
+	<style>
+
+		body {
+			margin: 0px;
+		}
+
+		#app_header {
+			background-color: #d6d6f5;
+			color: #3333cc;
+			height: clamp(45px, 9vh, 55px);
+			text-transform: uppercase;
+			font-size: 20px;
+			letter-spacing: 2px;
+			text-align: center;
+			padding-top: 20px;
+			font-family: sans-serif;
+			border-bottom: 1px solid black;
+		}
+
+		#form {
+			background-color: #dccae0;
+			width: 65%;
+			margin: auto;
+			margin-top: 2%;
+			/* height: 5%; */
+			padding: 2% 5%;
+		}
+
+		.row {
+			display:block;
+			margin:12px;
+			padding:7px;
+            padding-bottom: 10px;
+            
+		}
+
+		.label {
+			float: left;
+			width: 40%;
+		}
+
+		.stat {
+			float: right;
+			width: 50%;
+		}
+
+
+		.quizzes-table{
+			width: 100%;
+			border: solid 1pt black;
+			border-collapse: collapse;
+
+		}
+
+		.quizzes-table thead th, tbody td {
+			border: solid 1pt black;
+			text-align: center;
+			padding-top: 2%;
+			padding-bottom: 2%;
+		}
+
+		.quizzes-table tbody tr:hover {
+			background-color: #000000;
+			color: #ffffff;
+			cursor: pointer;
+		}
+
+		.gridd {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+		}
+		
+		.heading {
+			letter-spacing: 2px;
+			margin-top: 2%;
+			font-size: 18px;
+			padding-left: 10%;
+			margin-bottom: 0%;
+			margin-left: 1%
+		}
+
+		.panel-title {
+			margin-left: 2%
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app_header">
+		Pariksha-NITC
+	</div>
+
+	<h1 class="panel-title">Teacher's Panel</h1>
+
+	<div class="gridd">
+		<div class="gridd-element">
+			<div class="heading">
+				<h2>Your Quizzes</h2>
+				<p>
+					(select a quiz to view its stats)
+				</p>
+			</div>
+			<div id="form">
+				<div class="row">
+					
+					<table class="quizzes-table">
+						<thead>
+							<tr>
+								<th>Quiz ID</th>
+								<th>Quiz Title</th>
+								<th>Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1241357</td>
+								<td>Computer Fundamentals Quiz 2</td>
+								<td>01 October 2022</td>
+							</tr>
+							<tr>
+								<td>1231597</td>
+								<td>Computer Fundamentals Quiz 1</td>
+								<td>25 September 2022</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="gridd-element" id="quiz-stats">
+			<div class="heading">
+				<h2>Quiz Statistics</h2>
+				<p id="quiz-title">Computer Fundamentals Quiz 2 (<a href="">#1241357</a>)</p>
+			</div>
+			<div id="form">
+				<div class="row">
+					<div class="label">Quiz Average</div>
+					<div class="stat">17.25 / 20.00</div>
+				</div>
+				<div class="row">
+					<div class="label">Quiz Highest</div>
+					<div class="stat">20.00 / 20.00 (<a href="#">jd2022</a>)</div>
+				</div>
+				<div class="row">
+					<div class="label">Students Attempted</div>
+					<div class="stat">81 / 90</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		const rows = document.querySelectorAll(".quizzes-table tbody tr");
+		const stats = document.querySelector("#quiz-stats").querySelectorAll(".stat");
+		const quizTitle = document.querySelector("#quiz-stats").querySelector("#quiz-title");
+
+		rows.forEach((ele,idx) => {
+			const quizid = ele.querySelectorAll('td')[0].textContent;
+			const quizName = ele.querySelectorAll('td')[1].textContent;
+			ele.addEventListener("click", (e)=>{
+				
+				quizTitle.innerHTML = quizName + " (<a href=\"#\">#" + quizid + "</a>)";
+
+				if (idx == 0) {
+					stats[0].innerHTML="17.25 / 20.00";
+					stats[1].innerHTML="20.00 / 20.00 (<a href=\"#\">jd2022</a>)";
+					stats[2].innerHTML="81 / 90"
+				} else {
+					stats[0].innerHTML="15.75 / 20.00";
+					stats[1].innerHTML="18.50 / 20.00 (<a href=\"#\">at2000</a>)";
+					stats[2].innerHTML="84 / 90"
+				}
+				
+			});
+		});
+	</script>
+</body>
+
+</html>
