@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Question</title>
+    <script>
+        function clearField(x){
+            document.getElementById(x).value='';
+        }
+        function createOption(){
+            var x=document.getElementById('option').value;
+            if(x==''){
+                alert("Field can't be empty");
+            }
+            else{
+                var old=document.getElementById('optionsSoFar').innerHTML;
+                if(old==''){
+                    old+='<p> Choose one of these options : </p><br>' ;
+                }
+                old+='<p> <input type="radio" name="option">'+x+'</p><br>';
+                document.getElementById('optionsSoFar').innerHTML=old;
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        #app_header {
+            background-color: #d6d6f5;
+            color: #3333cc;
+            height: clamp(45px, 9vh, 55px);
+            text-transform: uppercase;
+            font-size: 20px;
+            letter-spacing: 2px;
+            text-align: center;
+            padding-top: 20px;
+            font-family: sans-serif;
+            border-bottom: 1px solid black;
+        }
+
+        #details{
+            height: 50vh;
+            display: flex;
+            justify-content: left ;            
+            background-color: #dccae0;
+            margin: auto;
+            height: 5%;
+            padding: 2% 5%;
+            flex-direction: column;
+        }
+        
+        #qstn{
+            display: flex;
+            justify-content: space-evenly;            
+            align-items: left;
+            background-color: #f3f36a;
+			height: 5%;
+			padding: 2% 5%;
+        }
+
+        #options{
+            justify-content: space-around;            
+            align-items: left;
+            background-color: #f3f36a;
+			height: 5%;
+			padding: 2% 5%;
+            flex-direction: column;
+        }
+
+        #limits{
+            justify-content: space-around;            
+            align-items: left;
+            background-color: #f3f36a;
+			height: 5%;
+			padding: 2% 5%;
+            flex-direction: column;
+        }
+        #action_area{
+	        padding:10px;
+            display:flex;
+            border-top: 2px solid rgb(216, 62, 62);
+            float:down;
+            gap :10px;
+            z-index:1;
+        }
+    </style>
+</head>
+<body>
+	
+    <div id="app_header">
+		Pariksha-NITC
+	</div>
+
+    <div id="details">
+        Test-2
+        <div id="questionType" style="margin-top:1%">
+            Select one of the following Types :
+            <select name="qtypes" style="border-radius:5px;">
+                <option value="schoice">Single Correct Choice Type</option>
+                <option value="mchoice">Multi Correct Choice Type</option>
+                <option value="subjective">Subjective Type</option>
+                <option value="integer">Integer Type</option>
+            </select>
+        </div>
+    </div>
+    <div id="qstn"> 
+            Ouestion <textarea name="question" cols="100" rows="4" id="question" onclick="clearField('question')"> Type in Question ... </textarea>
+    </div>
+    <div id="options">
+        <div id="optionsSoFar"></div>
+        <textarea name="option" cols="100" rows="2" id="option" onclick="clearField('option')"> Type in Option ... </textarea> <button style="border-radius:5px;width:max-content;height: fit-content;" onclick="createOption()">Create Option</button>
+    </div>
+
+    <div id="limits">
+        <p>Duration : <input type="text"> minutes </p>
+        <p>Marks : <input type="text"> marks </p>
+        <p>Feedback :</p> 
+        <p><textarea name="feedback" cols="100" rows="1" id="feedback" onclick="clearField('feedback')"> Feedback ... </textarea></p>
+    </div>
+
+    <div id="action_area">
+        <button class = "action_items" >Previous</button>
+        <button class = "action_items" >Save and Next</button>
+        <button class = "action_items" >Mark for Review and Next</button>
+        <button class = "action_items" >Delete Question</button>
+    </div>
+</body>
+</html>
